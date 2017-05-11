@@ -1,0 +1,11 @@
+	public $host = 'localhost';
+	public $port = 3306;
+	public $dbname = 'u618565252_druid';
+	public $username = 'u618565252_root';
+	public $password = 'digo00';
+	public $db;
+	
+	function __construct() {
+		//FunÃ§Ã£o que inicia o banco de dados usando PDO
+		$this->db = new PDO("mysql:host=$this->host;port=$this->port;dbname=$this->dbname;charset=utf8mb4", $this->username, $this->password); 
+	}

@@ -1,0 +1,553 @@
+@CHARSET "UTF-8";
+
+/*Tive que fazer esses bangs pra parar de deixar uma caixa pontilhada ao redor dos botões quando clicava*/
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+
+.clear {
+	clear:both;
+}
+
+body {
+	background: #D6EBFB;
+}
+
+/* Login e carrinho */
+#loginECarrinho {
+	background-color: #A0B5FF;
+}
+
+#loginECarrinho p {
+	font-size: 16px;
+	padding-right: 20px;
+	padding-top: 3px;
+	margin-bottom: 0px;
+}
+
+#loginECarrinho a {
+	color: #dbff28;
+}
+
+#loginECarrinho a:hover span {
+	text-decoration: underline;
+}
+
+/* Logo, Menu e busca */
+#headerLogo{
+	height: 120px;
+}
+
+#headerLogo img{
+	max-width: 150px;
+	width: 150px;
+	max-height: 100%;
+	position: relative;
+	top: -25px;
+	float: left;
+}
+
+#headerMenu{
+	height: 120px;
+}
+
+.nav {
+    list-style: none;
+    font-weight: bold;
+    margin-bottom: 5px;
+    /*float: left; /* Clear floats */
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    border-bottom: 1px solid #bfbfbf;
+}
+.nav li {
+    display: inline-block;
+}
+.nav a {
+    font: 30px Georgia, Times, serif;
+	font-weight: bold;
+	color: #bfbfbf;
+    text-decoration: none;
+}
+.nav a:hover {
+    text-decoration: underline;
+}
+
+/*--- DROPDOWN ---*/
+.nav ul {
+	z-index: 7;
+    background-color: #fff; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
+    background: rgba(255,255,255,0); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
+    list-style: none;
+    position: absolute;
+    left: -9999px; /* Hide off-screen when not needed (this is more accessible than display: none;) */
+}
+.nav ul li {
+    padding-top: 1px; /* Introducing a padding between the li and the a give the illusion spaced items */
+}
+.nav ul a {
+    white-space: nowrap; /* Stop text wrapping and creating multi-line dropdown items */
+}
+.nav li:hover ul { /* Display the dropdown on hover */
+    left: 0; /* Bring back on-screen when needed */
+    background-color: #fff;
+	border: 1px solid #f2f2f2;
+	margin: 0;
+    padding: 0;
+}
+.nav li:hover a { /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
+    text-decoration: underline;
+    
+}
+.nav li:hover ul a { /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.nav li:hover ul li {
+	border: 1px solid #f2f2f2;
+	width: 100%;
+}
+
+.nav li:hover ul li:hover { /* Here we define the most explicit hover states--what happens when you hover each individual link. */
+    background: #f2f2f2;
+}
+
+#headerSearch{
+	float: right;
+	position: relative;
+	margin-top: 25px;
+	height: 40px;
+}
+
+#headerSearch .txt{
+	width: 80%;
+	height: 40px;
+	background: url(../_imagens/search.png) no-repeat;
+	background-size: 100% 100%;
+	border:0;
+	padding: 0 0 0 15px;
+	font-size: 14px;
+	color: #999;
+	font-weight: bold;
+	float: left;
+}
+
+#headerSearch .btn_search{
+	width: 24px;
+	height: 24px;
+	position: relative;
+	top: 7px;
+	border: 0;
+	background: url(../_imagens/lupa.png) no-repeat;
+	background-size: cover;
+}
+
+#headerSearch .btn_search:hover{
+	cursor: pointer;
+}
+
+#headerSearch .btn_search:active{
+	top: 8px;
+}
+
+/* Footer */
+#footer {
+	background-color: #A0B5FF;
+	border-top: 1px solid black;
+	overflow: hidden;
+}
+
+#footer h3 {
+	font: 18px Verdana, Geneva, sans-serif;
+	font-weight: bold;
+	border-bottom: 1px solid black;
+	padding-bottom: 5px;
+	text-align: center;
+}
+
+#footer ul {
+	margin-left: 5%;
+	padding-top: 1%;
+	list-style-type: none;
+}
+
+#footer ul li {
+	font-size: 16px;
+}
+
+#footer ul li a {
+	text-decoration: none;
+	color: black;
+}
+
+#footer ul li a:hover {
+	text-decoration: underline;
+}
+
+#midiaSocial {
+	padding: 0;
+	text-align: center;
+}
+
+#midiaSocial li {
+	display: inline-block;
+	margin: 20px;
+}
+
+#midiaSocial a {
+	/*float: left;
+	margin: 8px 10px 0px 10px;*/
+}
+
+#midiaSocial img {
+	/*float: left;*/
+	width: 48px;
+	height: 48px;
+}
+
+/* Menu de categorias */
+#menuCategorias *{
+	list-style-type: none;
+	text-decoration: none;
+	padding: 0;
+	margin: 0;
+	color: black;
+}
+
+#tituloCategoria {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+#tituloCategoria a{
+	margin: 10px 0;
+	font: 30px Verdana, Geneva, sans-serif;
+	font-weight: bolder;
+}
+
+#categorias a:hover{
+	background-color: #eee;
+}
+
+#categorias ul {
+	border-top: 1px solid black;
+}
+
+.categoriaPrincipal {
+	font: 30px Verdana, Geneva, sans-serif;
+}
+
+#categorias ul li {
+	font: 22px Verdana, Geneva, sans-serif;
+	margin: 3px 0 5px 10px;
+}
+
+/* Página inicial */
+#tituloDestaque {
+	margin-right: 50px;
+	text-align: center;
+}
+
+#tituloDestaque a {
+	margin: 10px 0;
+	font: 24px Verdana, Geneva, sans-serif;
+	font-weight: bolder;
+	color: black;
+}
+
+/* Relativo a exibição dos produtos em miniatura */
+
+#conteudo * {
+	font-weight: bold;
+}
+
+.produtoMiniatura {
+	float: left;
+	display: inline-block;
+	
+	width: 30%;
+	min-width: 250px;
+	
+	min-height: 250px;
+	max-height: 250px;
+	
+	margin: 10px;
+	
+	border: 2px solid #ccc;
+	
+	text-align: center;
+}
+
+.produtoMiniatura img {
+	height: 120px;
+	width: auto;
+	margin: 15px 0 10px 0;
+}
+
+.produtoMiniatura a {
+	color: black;
+	text-decoration: none;
+}
+
+.produtoMiniatura:hover {
+	border: 2px solid black;
+}
+
+.produtoMiniatura h1 {
+	font-size: 24px;
+	margin: 0;
+}
+
+.produtoMiniatura h2 {
+	font-size: 20px;
+}
+
+.categoriaMiniatura {
+	margin-bottom: 20px;
+}
+
+.tituloCategoriaMiniatura {
+	margin-right: 50px;
+	text-align: center;
+}
+
+.tituloCategoriaMiniatura a {
+	margin: 10px 0;
+	font: 24px Verdana, Geneva, sans-serif;
+	font-weight: bolder;
+	color: black;
+}
+
+/* Relativo a páginas em construção */
+.emConstrucao {
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+/* Página sobre*/
+#sobre {
+}
+
+#sobre h1 {
+	color: #666;
+	margin: 0;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+#sobre img {
+	float: left;
+	margin-right: 8px;
+	padding: 3px;
+	border: 1px solid #ccc;
+}
+
+#sobre p{
+	font-size: 18px;
+	color: #333;
+	margin-left: 5px;
+}
+
+#sobre a{
+	text-decoration: none;
+	color: #06a;
+}
+
+/* Relativo aos formulários de várias páginas */
+.formularioGenerico {
+	width: 50%;
+	padding: 3px;
+}
+
+.formularioGenerico fieldset {
+	border: 0;
+	padding: 3px;
+}
+
+.formularioGenerico legend{
+	font-size: 17px;
+	color: #999;
+	font-weight: bold;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	float: left;
+	width: 100%;
+}
+
+.formularioGenerico label{
+	font-size: 14px;
+	font-weight: bold;
+	margin: 5px 0;
+	display: block;
+}
+
+.formularioGenerico span{
+	display: block;
+	margin: 8px 0;
+	color: #069;
+}
+
+.formularioGenerico input{
+	max-width: 100%;
+	min-width: 70%;
+	padding: 5px;
+	background: #fff;
+	border: 1px solid #ccc;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.formularioGenerico input:hover{
+	border-color: #333;
+}
+
+.formularioGenerico input:focus{
+	background-color: #f4f4f4;
+}
+
+.formularioGenerico textarea{
+	max-width: 100%;
+	width: 100%;
+	height: 240px;
+	padding: 5px;
+	background: #fff;
+	border: 1px solid #ccc;
+	font-size: 15px;
+	font-weight: normal;
+}
+
+.formularioGenerico textarea:hover{
+	border-color: #333;
+}
+
+.botaoEnviar{
+	width: 40%;
+	max-width: 50%;
+}
+
+/* Relativo a página de exibição de um produto clicado */
+
+#produtoCompleto {
+	text-align: center;
+}
+
+#produtoCompleto * {
+	padding: 0;
+	margin: auto;
+}
+
+#produtoCompleto h1 {
+	color: #666;
+	margin-bottom: 10px;
+}
+
+#produtoCompleto img {
+	min-width: 200px;
+	width: 40%;
+	height: 40%;
+	min-height: auto;
+	padding:3px;
+	border: 1px solid #ccc;
+	margin-bottom: 10px;
+}
+
+#produtoCompleto h2 {
+	font-size: 24px;
+	margin-bottom: 30px;
+}
+
+#produtoCompleto p {
+	width: 60%;
+	text-align: justify;
+	font-size: 24px;
+	color: #333;
+	margin-bottom: 20px;
+}
+
+.botaoEnviar {
+	width: 60%;
+}
+
+#produtoCompleto .botaoEnviar {
+	margin-bottom: 20px;
+}
+
+#produtoCompleto .botaoEnviar img {
+	border: 0;
+	display: block;
+	min-width: 80px;
+	max-width: 100px;
+	min-height: 80px;
+	max-width: 100px;
+}
+
+/* Carrinho */
+#carrinho {
+	width: 100%;
+	text-align: center;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+#carrinho tr {
+	border-bottom: 1px solid black;
+	
+}
+
+#carrinho th {
+	padding: 2px 0;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+#carrinho td {
+	padding: 2px 0px 2px 0px;
+}
+
+#cabecalho {
+	border-bottom: 1px solid black;
+}
+
+#carrinho th {
+	text-align: left;
+	font-size: 18px;
+}
+
+#carrinho td {
+	text-align: left;
+	font-size: 16px;
+}
+
+#carrinho input {
+	width: 60px;
+	font-size: 10px;
+	text-align: left;
+	padding-left: 0;
+	margin-left: 0;
+}
+
+/* Menu administrador */
+#menuAdmin *{
+	margin: 0;
+	padding: 0;
+}
+
+#menuAdmin h1 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#menuAdmin h2 {
+	font-size: 26px;
+	font-weight: 100;
+}
+
+#menuAdmin ul {
+	margin-bottom: 10px;
+}
+
+#menuAdmin li {
+	margin-left: 25px;
+	font-size: 16px;
+}
